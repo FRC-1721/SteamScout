@@ -1,9 +1,10 @@
 <?php
 
+  include "lib/mysql.php";
   $db_host = "localhost";
-  $database = "database";
-  $db_username = "username";
-  $db_password = "password";
+  $database = "robotics";
+  $db_username = "scouting";
+  $db_password = "StormScout";
 
 
   session_start();
