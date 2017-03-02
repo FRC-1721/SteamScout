@@ -1,0 +1,4 @@
+-----+ DEPLOY PROJECT +-----
+
+H:\ScoutingSite>start cmd /c bash -c "./push.sh"   & cls
+
