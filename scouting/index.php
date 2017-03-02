@@ -55,7 +55,7 @@
       </div>
     </div>
     <div class="container">
-      <hr />
+      <hr>
       <div class="row">
         <table class="table table-striped table-bordered">
           <?php
