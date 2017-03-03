@@ -16,9 +16,9 @@
     <link href="https://v4-alpha.getbootstrap.com/dist/css/bootstrap.min.css" rel="stylesheet">
 
     <!-- Font Awesome -->
-    <link href="../css/font-awesome.min.css" rel="stylesheet"/>
+    <link href="/css/font-awesome.min.css" rel="stylesheet"/>
     <!-- Custom Style -->
-    <link href="../css/index.css">
+    <link href="css/index.css">
   </head>
   <body>
     <?php
@@ -44,5 +44,7 @@
         </div>
       </div>
     </nav>
-  </body>
-</html>
+    <div class="jumbotron">
+      <div class="container">
+        <h2>Work on Event</h2>
+        

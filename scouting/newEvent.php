@@ -57,13 +57,22 @@
         $tbacode = mysql_real_escape_string($_POST['tba_code']);
 
         $registerQuery = mysql_query("INSERT INTO events (Name, Week, TBACode) VALUES ('".$name."', '".$week."', '".$tbacode."');");
-
         if ($registerQuery) {
-          echo "<script> window.location.replace('../scouting/index.php?s=addEvent')</script>";
-        } else {
+          $newEventID = mysql_result(mysql_query("SELECT ID FROM events WHERE Name = ".$name." LIMIT 1"));
+          $newQuery = mysql_query("CREATE TABLE `teamsAt".$newEventID."` (`TeamNumber` INT(25) NOT NULL PRIMARY KEY, `Name` VARCHAR(255) NOT NULL)");
+          if ($newQuery) {
+            $anotherQuery = mysql_query("CREATE TABLE `matchesAt".$newEventID."` (`MatchNumber` INT(25) NOT NULL AUTO_INCREMENT PRIMARY KEY, `Red1` INT(25) NOT NULL, `Red2` INT(25) NOT NULL, `Red3` INT(25) NOT NULL, `Blue1` INT(25) NOT NULL, `Blue2` INT(25) NOT NULL, `Blue3` INT(25) NOT NULL)");
+            if ($anotherQuery) {
+              echo "<script> window.location.replace('../scouting/index.php?s=addEvent')</script>";
+            } else {
+              echo "<script> window.location.replace('../scouting/index.php?f=addEvent')</script>";
+            }
+          } else {
           echo "<script> window.location.replace('../scouting/index.php?f=addEvent')</script>";
         }
       } else {
+        echo "<script> window.location.replace('../scouting/index.php?f=addEvent')</script>";
+      }
     ?>
     <div class="container">
       <form method="post" action="/scouting/newEvent.php" name="registerform" id="registerform" class="form-horizontal">

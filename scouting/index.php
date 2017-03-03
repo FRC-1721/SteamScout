@@ -46,7 +46,7 @@
     </nav>
     <div class="jumbotron">
       <div class="container">
-        <h1>SteamScout<i class="fa fa-cloud"></i></h1>
+        <h1>SteamScout</h1>
         <p><strong>Tidal Force - Scouting Software.</strong> This is a cloud based scouting software designed to run on a raspberry pi in the stands for competition. It was designed by
           members of the team, and then built by Brennan Macaig. This is the main screen, where you can create an event, or work with one of the events already created.</p>
         <div class="btn-group" role="group" aria-label="Actions">
@@ -81,8 +81,8 @@
                 <tr>
                   <td><?php echo implode('</td><td>', $tablerow);?></td>
                   <td><div class="btn-group" role="group" aria-label="Actions"><?php
-                  echo "<a class='btn btn-success' role='button' href='../scouting/scout?id=".$tablerow['ID']."'><i class='fa fa-gavel'></i>Work</a>'";
-                  echo "<button type='button' class='btn btn-danger' data-toggle='modal' data-target='#mdlid".$tablerow['ID']."'><i class='fa fa-trash-o'></i>Delete</button><div class='modal fade' id='mdlid".$tablerow['ID']."' tabindex='-1' role='dialog' aria-labelledby='Delete Modal' aria-hidden='true'><div class='modal-dialog'><div class='modal-content'><div class='modal-header'><button type='button' class='close' data-dismiss='modal' aria-label='Close'><span aria-hidden='true'>&times;</span></button><h4 class='modal-title' id='modalLabel'>Are you sure?</h4></div><div class='modal-body'><p><strong>Are you sure?</strong> By pressing \"DELETE\" below you understand that there are risks to what you're about to do. Things may unexpectedly break and data may be lost. <strong>This is not able to be undone</strong>. Please proceede with caution.</p></div><div class='modal-footer'><button type='button' class='btn btn-success' data-dismiss='modal'>Return to Safety</button><a class='btn btn-danger' role='button' href='../scouting/deleteEvent?id=".$tablerow['ID']."'>I understand the risks, continue anyways.</a></div></div></div></div>";
+                  echo "<a class='btn btn-success' role='button' href='../scouting/scout?id=".$tablerow['ID']."'>Work</a>'";
+                  echo "<button type='button' class='btn btn-danger' data-toggle='modal' data-target='#mdlid".$tablerow['ID']."'>Delete</button><div class='modal fade' id='mdlid".$tablerow['ID']."' tabindex='-1' role='dialog' aria-labelledby='Delete Modal' aria-hidden='true'><div class='modal-dialog'><div class='modal-content'><div class='modal-header'><button type='button' class='close' data-dismiss='modal' aria-label='Close'><span aria-hidden='true'>&times;</span></button><h4 class='modal-title' id='modalLabel'>Are you sure?</h4></div><div class='modal-body'><p><strong>Are you sure?</strong> By pressing \"DELETE\" below you understand that there are risks to what you're about to do. Things may unexpectedly break and data may be lost. <strong>This is not able to be undone</strong>. Please proceede with caution.</p></div><div class='modal-footer'><button type='button' class='btn btn-success' data-dismiss='modal'>Return to Safety</button><a class='btn btn-danger' role='button' href='../scouting/deleteEvent?id=".$tablerow['ID']."'>I understand the risks, continue anyways.</a></div></div></div></div>";
                 ?>
                 </div></tr>
               <?php endforeach; ?>
