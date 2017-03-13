@@ -66,8 +66,9 @@
           echo "<script> window.location.replace('../scouting/index.php?s=1')</script>";
         } else {
           echo "<script> window.location.replace('../scouting/index.php?f=1')</script>";
-        } else {
-      ?>
+        }
+      } else {
+    ?>
     <div class="container">
       <hr>
       <div class="row">
