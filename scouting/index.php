@@ -88,19 +88,19 @@
             <div class="col-sm-10">
               <div class="radio">
                 <label>
-                  <input type="radio" name="radio" id="radio" value="1" checked>
+                  <input type="radio" name="auto" id="auto" value="1" checked>
                   Did nothing
                 </label>
               </div>
               <div class="radio">
                 <label>
-                  <input type="radio" name="radio" id="radio" value="2">
+                  <input type="radio" name="auto" id="auto" value="2">
                   Only Crossed Line (Dark Green / Gray)
                 </label>
               </div>
               <div class="radio">
                 <label>
-                  <input type="radio" name="radio" id="radio" value="3">
+                  <input type="radio" name="auto" id="auto" value="3">
                   Deposited Gear
                 </label>
               </div>
@@ -142,13 +142,13 @@
           <div class="col-sm-10">
             <div class="radio">
               <label>
-                <input type="radio" name="radio" id="radio" value="1" checked>
+                <input type="radio" name="climb" id="climb" value="1" checked>
                 Yes
               </label>
             </div>
             <div class="radio">
               <label>
-                <input type="radio" name="radio" id="radio" value="2">
+                <input type="radio" name="climb" id="climb" value="0">
                 No
               </label>
             </div>
