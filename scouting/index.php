@@ -39,7 +39,7 @@
         <div id="navbar" class="navbar-collapse collapse">
           <ul class="nav navbar-nav">
             <li class="active"><a href="#">Home</a></li>
-            <li><a class="../scouting/viewAllData.php">View All Data</a></li>
+            <li><a href="../scouting/viewAllData.php">View All Data</a></li>
             <li><a href="../scouting/print.php">Print Data</a></li>
             <li><a href="../logout">Log Out</a></li>
           </ul>
@@ -74,7 +74,7 @@
     <div class="container">
       <hr>
       <div class="row">
-        <form method="post" action="/scouting/index.php", name="registerform" id="registerform" class="form-horizontal">
+        <form method="POST" action="/scouting/index.php", name="registerform" id="registerform" class="form-horizontal">
           <div class="form-group">
             <label for="team" class="col-sm-2">Team Number:</label>
             <div class="col-sm-10">
@@ -111,7 +111,7 @@
         <div class="form-group">
           <label class="col-sm-2">Gears Delivered (TELE)</label>
           <div class="col-sm-10">
-            <select class="form-control" name="gears">
+            <select class="form-control" name="gear">
               <option value="1">1</option>
               <option value="2">2</option>
               <option value="3">3</option>
