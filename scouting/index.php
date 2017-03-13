@@ -159,7 +159,7 @@
         </div>
       </form>
       </div>
-      <? php } ?>
+      <?php } ?>
       <hr>
       <footer>
         <div style="display:table-cell;vertical-align:bottom;">
