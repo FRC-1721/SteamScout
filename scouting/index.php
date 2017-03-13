@@ -47,62 +47,128 @@
     <div class="jumbotron">
       <div class="container">
         <h1>SteamScout</h1>
-        <p><strong>Tidal Force - Scouting Software.</strong> This is a cloud based scouting software designed to run on a raspberry pi in the stands for competition. It was designed by
-          members of the team, and then built by Brennan Macaig. This is the main screen, where you can create an event, or work with one of the events already created.</p>
-        <div class="btn-group" role="group" aria-label="Actions">
-          <a class="btn btn-primary" role="button" href="addEvent">Add an Event</a>
-        </div>
+        <p><strong>FRC 1721 - Tidal Force presents SteamScout.</strong> This is a cloud based scouting software designed to run on a raspberry pi in the stands for competition. It was designed by
+          members of the team, and then built by Brennan Macaig.</p>
       </div>
     </div>
+    <?php
+      if (isset($_POST['team']) && isset($_POST['match']) && isset($_POST['auto']) && isset($_POST['gear']) && isset($_POST['kpa']) && isset($_POST['climb'])) {
+        $team = mysql_real_escape_string($_POST['team']);
+        $match = mysql_real_escape_string($_POST['match']);
+        $auto = mysql_real_escape_string($_POST['auto']);
+        $gear = mysql_real_escape_string($_POST['gear']);
+        $kpa = mysql_real_escape_string($_POST['kpa']);
+        $climb = mysql_real_escape_string($_POST['climb']);
+
+        $postQuery = mysql_query("INSERT INTO 2017marea (Team, Match, Auto, Gear, Kpa, Climb) VALUES ('".$team."', '".$match."', '".$auto."', '".$gear."', '".$kpa."', '".$climb."')");
+
+        if ($postQuery) {
+          echo "<script> window.location.replace('../scouting/index.php?s=1')</script>";
+        } else {
+          echo "<script> window.location.replace('../scouting/index.php?f=1')</script>";
+        }
+      } else {
+      ?>
     <div class="container">
       <hr>
       <div class="row">
-        <table class="table table-striped table-bordered">
-          <?php
-            $query = "SELECT * FROM events";
-            $result = mysql_query($query);
-            $content = array();
-
-            $num = mysql_num_rows($result);
-            if ($num > 0) {
-              while ($row = mysql_fetch_assoc($result)) {
-                $content[$row['ID']] = $row;
-              }
-            }
-            if ($num > 0) {
-          ?>
-            <thead>
-              <tr>
-                <th><?php echo implode('</th><th>', array_keys(current($content)));?></th></th>Actions</th>
-              </tr>
-            </thead>
-            <tbody>
-              <?php foreach ($content as $tablerow): ?>
-                <tr>
-                  <td><?php echo implode('</td><td>', $tablerow);?></td>
-                  <td><div class="btn-group" role="group" aria-label="Actions"><?php
-                  echo "<a class='btn btn-success' role='button' href='../scouting/scout?id=".$tablerow['ID']."'>Work</a>'";
-                  echo "<button type='button' class='btn btn-danger' data-toggle='modal' data-target='#mdlid".$tablerow['ID']."'>Delete</button><div class='modal fade' id='mdlid".$tablerow['ID']."' tabindex='-1' role='dialog' aria-labelledby='Delete Modal' aria-hidden='true'><div class='modal-dialog'><div class='modal-content'><div class='modal-header'><button type='button' class='close' data-dismiss='modal' aria-label='Close'><span aria-hidden='true'>&times;</span></button><h4 class='modal-title' id='modalLabel'>Are you sure?</h4></div><div class='modal-body'><p><strong>Are you sure?</strong> By pressing \"DELETE\" below you understand that there are risks to what you're about to do. Things may unexpectedly break and data may be lost. <strong>This is not able to be undone</strong>. Please proceede with caution.</p></div><div class='modal-footer'><button type='button' class='btn btn-success' data-dismiss='modal'>Return to Safety</button><a class='btn btn-danger' role='button' href='../scouting/deleteEvent?id=".$tablerow['ID']."'>I understand the risks, continue anyways.</a></div></div></div></div>";
-                ?>
-                </div></tr>
-              <?php endforeach; ?>
-            </tbody>
-          </table>
-        <?php } else { ?>
-        <div class="alert alert-info" role="alert">
-          <p><strong>This is embarrassing...</strong> It doesn't look like you've created any events to scout yet. Look at the button above this message and create an event to scout first.</p>
+        <form method="post" action="/scouting/index.php", name="registerform" id="registerform" class="form-horizontal">
+          <div class="form-group">
+            <label for="team" class="col-sm-2">Team Number:</label>
+            <div class="col-sm-10">
+              <input type="text" name="team" id="team">
+            </div>
+            <label for="match" class="col-sm-2">Match Number:</label>
+            <div class="col-sm-10">
+              <input type="text" name="match" id="match">
+            </div>
+          </div>
+          <div class="form-group">
+            <label for="auto" class="col-sm-2">Autonomous Performance</label>
+            <div class="col-sm-10">
+              <div class="radio">
+                <label>
+                  <input type="radio" name="radio" id="radio" value="1" checked>
+                  Did nothing
+                </label>
+              </div>
+              <div class="radio">
+                <label>
+                  <input type="radio" name="radio" id="radio" value="2">
+                  Only Crossed Line (Dark Green / Gray)
+                </label>
+              </div>
+              <div class="radio">
+                <label>
+                  <input type="radio" name="radio" id="radio" value="3">
+                  Deposited Gear
+                </label>
+              </div>
+          </div>
         </div>
-        <?php } ?>
-      </div>
-    <hr>
-    <footer>
-      <div style="display:table-cell;vertical-align:bottom;">
-        <div style="margin-left:auto;margin-right:auto;">
-          <p>SteamScout <i class="fa fa-copyright"> Concord Robotics and Brennan Macaig 2017. All Rights Reserved. &bull; <a href="../license.html">License</a> &bull; <a href="http://www.frc1721.org">FRC 1721 Home</a>'
+        <div class="form-group">
+          <label class="col-sm-2">Gears Delivered (TELE)</label>
+          <div class="col-sm-10">
+            <select class="form-control" name="gears">
+              <option value="1">1</option>
+              <option value="2">2</option>
+              <option value="3">3</option>
+              <option value="4">4</option>
+              <option value="5">5</option>
+              <option value="6">6</option>
+              <option value="7">7</option>
+              <option value="8">8</option>
+              <option value="9">9</option>
+              <option value="10">10</option>
+              <option value="11">11</option>
+              <option value="12">12</option>
+            </select>
+          </div>
+          <label class="col-sm-2">Aprox. KPA Contribution</label>
+          <div class="col-sm-10">
+            <select class="form-control" name="kpa">
+              <option value="0">0</option>
+              <option value="5">5</option>
+              <option value="10">10</option>
+              <option value="15">15</option>
+              <option value="20">20</option>
+              <option value="25">25</option>
+              <option value="30">30</option>
+              <option value="35">35</option>
+              <option value="40">40</option>
+            </select>
+          </div>
+          <label for="tele" class="col-sm-2">Did they climb?</label>
+          <div class="col-sm-10">
+            <div class="radio">
+              <label>
+                <input type="radio" name="radio" id="radio" value="1" checked>
+                Yes
+              </label>
+            </div>
+            <div class="radio">
+              <label>
+                <input type="radio" name="radio" id="radio" value="2">
+                No
+              </label>
+            </div>
+          </div>
         </div>
+        <div class="form-group">
+          <input type="submit" name="register" id="register" class="btn btn-success" value="Submit" />
+        </div>
+      </form>
       </div>
-    </footer>
-  </div>
+      <? php } ?>
+      <hr>
+      <footer>
+        <div style="display:table-cell;vertical-align:bottom;">
+          <div style="margin-left:auto;margin-right:auto;">
+            <p>SteamScout <i class="fa fa-copyright"> Concord Robotics and Brennan Macaig 2017. All Rights Reserved. &bull; <a href="../license.html">License</a> &bull; <a href="http://www.frc1721.org">FRC 1721 Home</a>'
+          </div>
+        </div>
+      </footer>
+    </div>
   <?php
     } else {
       echo "<meta http-equiv='refresh' content='/' />";
@@ -110,5 +176,5 @@
       // Whoops! Not logged in.
     }
   ?>
-</body>
+  </body>
 </html>
