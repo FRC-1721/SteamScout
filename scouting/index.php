@@ -39,6 +39,8 @@
         <div id="navbar" class="navbar-collapse collapse">
           <ul class="nav navbar-nav">
             <li class="active">Home</li>
+            <li><a class="../scouting/viewAllData.php">View All Data</a></li>
+            <li><a href="../scouting/print.php">Print Data</a></li>
             <li><a href="../logout">Log Out</a></li>
           </ul>
         </div>
