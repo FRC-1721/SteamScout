@@ -68,6 +68,8 @@
         <p><strong>┐(‘～`；)┌</strong> We couldn't insert your record into the database, sorry. Try it again maybe?</p>
       </div>
       <?php break;
+      default:
+        break;
     }?>
     <div class="jumbotron">
       <div class="container">
