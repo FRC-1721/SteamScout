@@ -159,7 +159,7 @@ namespace {
 
         function mysql_query($query, \mysqli $link = null)
         {
-            return mysqli_query(\Dshafik\MySQL::getConnection($link), $query);
+            return mysqli_real_query(\Dshafik\MySQL::getConnection($link), $query);
         }
 
         function mysql_unbuffered_query($query, \mysqli $link = null)
