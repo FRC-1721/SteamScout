@@ -57,6 +57,8 @@
       </div>
     <?php
         break;
+      default:
+        break;
     }
     switch($_GET['f']) {
       case "1":
