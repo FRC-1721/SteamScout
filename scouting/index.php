@@ -77,12 +77,12 @@
     </div>
     <?php
       if (isset($_POST['team']) && isset($_POST['match']) && isset($_POST['auto']) && isset($_POST['gear']) && isset($_POST['kpa']) && isset($_POST['climb'])) {
-        $team = mysql_real_escape_string($_POST['team']);
-        $match = mysql_real_escape_string($_POST['match']);
-        $auto = mysql_real_escape_string($_POST['auto']);
-        $gear = mysql_real_escape_string($_POST['gear']);
-        $kpa = mysql_real_escape_string($_POST['kpa']);
-        $climb = mysql_real_escape_string($_POST['climb']);
+        $team = ($_POST['team']);
+        $match = ($_POST['match']);
+        $auto = ($_POST['auto']);
+        $gear = ($_POST['gear']);
+        $kpa = ($_POST['kpa']);
+        $climb = ($_POST['climb']);
 
         $postQuery = mysql_query("INSERT INTO 2017marea (Team, `Match`, Auto, Gear, Kpa, Climb) VALUES ($team, $match, $auto, $gear, $kpa, $climb)");
 
