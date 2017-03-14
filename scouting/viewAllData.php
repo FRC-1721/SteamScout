@@ -56,7 +56,7 @@
     <div class="container">
       <hr>
       <div class="row">
-        <table class="Table table-striped table-bordered">
+        <table class="table table-striped table-bordered">
           <?php
             $query = "SELECT * FROM 2017marea";
             $result = mysql_query($query);
