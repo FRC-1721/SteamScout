@@ -48,21 +48,24 @@
       </div>
     </nav>
     <?php
-    if($_GET['s']) { ?>
-      <div class="alert alert-success alert-dismissible" role="alert">
-        <p><strong>(づ｡◕‿‿◕｡)づ</strong> Your record was added successfully! Now do another!</p>
-      </div>
-    <?php
-
-  } else if ($_GET['f']) {
-      ?>
-      <div class="alert alert-danger alert-dismissible" role="alert">
-        <p><strong>┐(‘～`；)┌</strong> We couldn't insert your record into the database, sorry. Try it again maybe?</p>
-      </div>
-      <?php
-    } else {
-
-    }?>
+            switch ($_GET['s']) {
+                case "1":
+                    ?>
+                    <div class="alert alert-success" role="alert">
+                        <p><strong>(づ｡◕‿‿◕｡)づ</strong> We added your scouting record. Do another!</p>
+                    </div>
+                    <?php
+                    break;
+            }
+            switch ($_GET['f']) {
+              case "1":
+                ?>
+                <div class="alert alert-danger" role="alert">
+                    <p><strong>┐(‘～`；)┌</strong> Sorry, but that record failed. Try again maybe?</p>
+                </div>
+                <?php break;
+            }
+            ?>
     <div class="jumbotron">
       <div class="container">
         <h1>SteamScout</h1>
