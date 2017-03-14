@@ -63,6 +63,7 @@
         $climb = mysql_real_escape_string($_POST['climb']);
 
         $postQuery = mysql_query("INSERT INTO `2017marea` (Team, `Match`, Auto, Gear, Kpa, Climb) VALUES ('$team', '$match', '$auto', '$gear', '$kpa', '$climb')");
+
         if ($postQuery) {
           echo "<script> window.location.replace('../scouting/index.php?s=1')</script>";
         } else {
@@ -111,6 +112,7 @@
           <label class="col-sm-2">Gears Delivered (TELE)</label>
           <div class="col-sm-10">
             <select class="form-control" name="gear">
+              <option value="0">0</option>
               <option value="1">1</option>
               <option value="2">2</option>
               <option value="3">3</option>
@@ -165,7 +167,7 @@
       <footer>
         <div style="display:table-cell;vertical-align:bottom;">
           <div style="margin-left:auto;margin-right:auto;">
-            <p>SteamScout &copy;Concord Robotics and Brennan Macaig 2017. All Rights Reserved. &bull; <a href="../license.html">License</a> &bull; <a href="http://www.frc1721.org">FRC 1721 Home</a>'
+            <p>SteamScout &copy; Concord Robotics and Brennan Macaig 2017. All Rights Reserved. &bull; <a href="../license.html">License</a> &bull; <a href="http://www.frc1721.org">FRC 1721 Home</a>'
           </div>
         </div>
       </footer>
