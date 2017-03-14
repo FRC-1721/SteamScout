@@ -46,6 +46,40 @@
         </div>
       </div>
     </nav>
+    <?php
+    switch($_GET['s']) {
+      case "1":
+      ?>
+      <div class="alert alert-success alert-dismissible" role="alert">
+        <button type="button" class="close" data-dismiss="alert" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+        <p><strong>(づ｡◕‿‿◕｡)づ</strong> Your record was added successfully! Now do another!</p>
+      </div>
+    <?php
+        break;
+      default:
+      ?>
+      <div class="alert alert-success alert-dismissible" role="alert">
+        <button type="button" class="close" data-dismiss="alert" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+        <p><strong>(づ｡◕‿‿◕｡)づ</strong> Your record was added successfully! Now do another!</p>
+      </div>
+    <?php
+        break;
+    }
+    switch($_GET['f']) {
+      case "1":
+      ?>
+      <div class="alert alert-danger alert-dismissible" role="alert">
+        <button type="button" class="close" data-dismiss="alert" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+        <p><strong>┐(‘～`；)┌</strong> We couldn't insert your record into the database, sorry. Try it again maybe?</p>
+      </div>
+      <?php break;
+      default:
+        ?>
+        <div class="alert alert-danger alert-dismissible" role="alert">
+          <button type="button" class="close" data-dismiss="alert" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+          <p><strong>┐(‘～`；)┌</strong> We couldn't insert your record into the database, sorry. Try it again maybe?</p>
+        </div>
+        <?php break; } ?>
     <div class="jumbotron">
       <div class="container">
         <h1>SteamScout</h1>
