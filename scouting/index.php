@@ -84,7 +84,7 @@
         $kpa = mysql_real_escape_string($_POST['kpa']);
         $climb = mysql_real_escape_string($_POST['climb']);
 
-        $postQuery = mysql_real_query("INSERT IGNORE 2017marea (Team, `Match`, Auto, Gear, Kpa, Climb) VALUES ($team, $match, $auto, $gear, $kpa, $climb)");
+        $postQuery = mysql_query("INSERT IGNORE 2017marea (Team, `Match`, Auto, Gear, Kpa, Climb) VALUES ($team, $match, $auto, $gear, $kpa, $climb)");
 
         if ($postQuery) {
           echo "<script> window.location.replace('../scouting/index.php?s=1')</script>";
