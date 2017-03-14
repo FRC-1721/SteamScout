@@ -165,7 +165,7 @@
       <footer>
         <div style="display:table-cell;vertical-align:bottom;">
           <div style="margin-left:auto;margin-right:auto;">
-            <p>SteamScout <i class="fa fa-copyright"> Concord Robotics and Brennan Macaig 2017. All Rights Reserved. &bull; <a href="../license.html">License</a> &bull; <a href="http://www.frc1721.org">FRC 1721 Home</a>'
+            <p>SteamScout &copy;Concord Robotics and Brennan Macaig 2017. All Rights Reserved. &bull; <a href="../license.html">License</a> &bull; <a href="http://www.frc1721.org">FRC 1721 Home</a>'
           </div>
         </div>
       </footer>
