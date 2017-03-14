@@ -15,8 +15,6 @@
     <!-- Bootstrap 4.0.0-alpha.6 core CSS -->
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
 
-    <!-- Font Awesome -->
-    <link href="../css/font-awesome.min.css" rel="stylesheet"/>
     <!-- Custom Style -->
     <link href="../css/index.css">
   </head>
@@ -93,7 +91,7 @@
         <footer>
           <div style="display:table-cell;vertical-align:bottom;">
             <div style="margin-left:auto;margin-right:auto;">
-              <p>SteamScout <i class="fa fa-copyright"> Concord Robotics and Brennan Macaig 2017. All Rights Reserved. &bull; <a href="../license.html">License</a> &bull; <a href="http://www.frc1721.org">FRC 1721 Home</a>'
+              <p>SteamScout &copy; Concord Robotics and Brennan Macaig 2017. All Rights Reserved. &bull; <a href="../license.html">License</a> &bull; <a href="http://www.frc1721.org">FRC 1721 Home</a>'
             </div>
           </div>
         </footer>
