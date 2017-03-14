@@ -48,6 +48,7 @@
       </div>
     </nav>
     <?php
+            if (isset($_GET['s'])) {
             switch ($_GET['s']) {
                 case "1":
                     ?>
@@ -56,7 +57,8 @@
                     </div>
                     <?php
                     break;
-            }
+            }}
+            if (isset($_GET['f'])) {
             switch ($_GET['f']) {
               case "1":
                 ?>
@@ -64,7 +66,7 @@
                     <p><strong>┐(‘～`；)┌</strong> Sorry, but that record failed. Try again maybe?</p>
                 </div>
                 <?php break;
-            }
+            }}
             ?>
     <div class="jumbotron">
       <div class="container">
