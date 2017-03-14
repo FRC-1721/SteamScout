@@ -19,6 +19,7 @@
     <link href="../css/font-awesome.min.css" rel="stylesheet"/>
     <!-- Custom Style -->
     <link href="../css/index.css">
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
   </head>
   <body>
     <?php
@@ -56,14 +57,6 @@
       </div>
     <?php
         break;
-      default:
-      ?>
-      <div class="alert alert-success alert-dismissible" role="alert">
-        <button type="button" class="close" data-dismiss="alert" aria-label="Close"><span aria-hidden="true">&times;</span></button>
-        <p><strong>(づ｡◕‿‿◕｡)づ</strong> Your record was added successfully! Now do another!</p>
-      </div>
-    <?php
-        break;
     }
     switch($_GET['f']) {
       case "1":
@@ -73,13 +66,7 @@
         <p><strong>┐(‘～`；)┌</strong> We couldn't insert your record into the database, sorry. Try it again maybe?</p>
       </div>
       <?php break;
-      default:
-        ?>
-        <div class="alert alert-danger alert-dismissible" role="alert">
-          <button type="button" class="close" data-dismiss="alert" aria-label="Close"><span aria-hidden="true">&times;</span></button>
-          <p><strong>┐(‘～`；)┌</strong> We couldn't insert your record into the database, sorry. Try it again maybe?</p>
-        </div>
-        <?php break; } ?>
+    }?>
     <div class="jumbotron">
       <div class="container">
         <h1>SteamScout</h1>
@@ -213,7 +200,5 @@
       // Whoops! Not logged in.
     }
   ?>
-  <!-- Latest compiled and minified JavaScript -->
-<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
   </body>
 </html>
